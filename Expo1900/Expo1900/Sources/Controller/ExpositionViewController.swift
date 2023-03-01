@@ -7,6 +7,7 @@
 import UIKit
 
 final class ExpositionViewController: UIViewController {
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var visitorCountLabel: UILabel!
@@ -37,6 +38,7 @@ final class ExpositionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        appDelegate?.shouldSupportAllOrientation = false
         hideNavigationBar()
     }
     

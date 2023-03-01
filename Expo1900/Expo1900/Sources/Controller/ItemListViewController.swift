@@ -7,6 +7,7 @@
 import UIKit
 
 final class ItemListViewController: UIViewController {
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
     static let viewIdentifier = "itemListViewController"
     private var exhibitItems: [ExhibitItem] = DecodingJson().decodeItemsJson()
     
@@ -29,6 +30,7 @@ final class ItemListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        appDelegate?.shouldSupportAllOrientation = true
         hideNavigationBar()
     }
     

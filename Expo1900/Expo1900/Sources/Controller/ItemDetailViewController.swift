@@ -7,6 +7,7 @@
 import UIKit
 
 final class ItemDetailViewController: UIViewController {
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
     static let viewIdentifier = "itemDetailViewController"
     private var navigationTitle: String
     private var imageName: String
@@ -20,6 +21,11 @@ final class ItemDetailViewController: UIViewController {
         navigationItem.title = navigationTitle
         descriptionLabel.text = descriptionText
         imageView.image = UIImage(named: imageName)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        appDelegate?.shouldSupportAllOrientation = true
     }
     
     init?(item: ExhibitItem, coder: NSCoder) {
