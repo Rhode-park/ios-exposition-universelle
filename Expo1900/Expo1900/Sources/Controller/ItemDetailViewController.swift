@@ -18,9 +18,21 @@ final class ItemDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTitle()
+        configure()
+    }
+    
+    func configureTitle() {
         navigationItem.title = navigationTitle
+    }
+    
+    func configure() {
         descriptionLabel.text = descriptionText
         imageView.image = UIImage(named: imageName)
+        
+        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        
+        descriptionLabel.adjustsFontForContentSizeCategory = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

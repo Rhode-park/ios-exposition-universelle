@@ -34,6 +34,18 @@ final class ExpositionViewController: UIViewController {
         locationLabel.text = NameSpace.leftLocationString + expositionUniverselle.location
         durationLabel.text = NameSpace.leftDurationString + expositionUniverselle.duration
         descriptionLabel.text = expositionUniverselle.description
+        
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+        visitorCountLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        locationLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        durationLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        
+        titleLabel.adjustsFontForContentSizeCategory = true
+        visitorCountLabel.adjustsFontForContentSizeCategory = true
+        locationLabel.adjustsFontForContentSizeCategory = true
+        durationLabel.adjustsFontForContentSizeCategory = true
+        descriptionLabel.adjustsFontForContentSizeCategory = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
